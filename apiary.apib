@@ -1,0 +1,105 @@
+FORMAT: 1A
+HOST: http://api.spiderlog.net
+
+# Spider Log API
+Spider Log API provides services for the Spider Log family, recording the world's spider sightings.
+
+# Group Spiders
+Access to Spider resources
+
+## My Spiders [/spiders]
+### Get all my spider sightings [GET]
++ Request
+
+    + Header
+    
+            Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+        
++ Response 200 (application/json)
+
+        [
+            {
+                "sightedAt" : "2014-08-29T07:00",
+                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/spiderlog-images/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                "description" : "Spider I saw on the train",
+                "tags": [
+                    "stripey"
+                ]
+            }, 
+            {
+                "sightedAt" : "2014-08-29T13:00",
+                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/spiderlog-images/uid-19247681/201408/14587204878_91405ee2e1_z.jpg",
+                "description" : "Spider I saw at the office",
+                "tags": [
+                    "big"
+                ]
+            },
+            {
+                "sightedAt" : "2014-08-29T19:00",
+                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/spiderlog-images/uid-19247681/201408/14776091214_4699046e5d_z.jpg",
+                "description" : "Spider I saw at home",
+                "tags": [
+                    "big",
+                    "stripey"
+                ]
+            }
+        ]
+
+### Create a spider sighting [POST]
++ Request (application/json)
+
+    + Header
+    
+            Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+            
+    + Body
+
+            {
+                "sightedAt" : "2014-08-29T19:00",
+                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/spiderlog-images/uid-19247681/201408/14776091214_4699046e5d_z.jpg",
+                "description" : "Spider I saw at home",
+                "tags": [
+                    "big",
+                    "stripey"
+                ]
+            }
+
++ Response 201
+
+    + Header
+
+            Location: spiders/123
+
+## Spider [/spiders/{id}]
++ Parameters
+    + id (required, number, `123`) ... Numeric `id` of the spider log.
+
+### Fetch sighting details [GET]
++ Request
+
+    + Header
+    
+            Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+            
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "sightedAt" : "2014-08-29T19:00",
+                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/spiderlog-images/uid-19247681/201408/14776091214_4699046e5d_z.jpg",
+                "description" : "Spider I saw at home",
+                "tags": [
+                    "big",
+                    "stripey"
+                ]
+            }
+
+### Archive a sighting [DELETE]
++ Request
+
+    + Header
+    
+            Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+            
++ Response 204
