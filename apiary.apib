@@ -19,42 +19,51 @@ Access to Spider resources
     + Header
     
             Authorization: Basic dXNlcjpwYXNzd29yZA==
+            x-api-version: 1.0
         
 + Response 200 (application/json)
 
-        {
-            "page" :
+    + Header
+    
+            ETag : "euyfewuyfvew76f7"
+            cache-control: max-age=600
+            
+    + Body
+
             {
-                "number" : 1,
-                "size": 10,
-                "totalPages": 20
-            },
-            "spiders" :
-            [
+                "page" :
                 {
-                    "sightedAt" : "2014-08-29T07:00",
-                    "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
-                    "description" : "Spider I saw on the train",
-                    "tags": [
-                        "stripy"
-                    ]
-                }, 
-                {
-                    "sightedAt" : "2014-08-29T13:00",
-                    "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14587204878_91405ee2e1_z.jpg",
-                    "description" : "Spider I saw at the office",
-                    "tags": [
-                        "big"
-                    ]
+                    "number" : 1,
+                    "size": 10,
+                    "totalPages": 20
                 },
-                {
-                    "sightedAt" : "2014-08-29T19:00",
-                    "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14776091214_4699046e5d_z.jpg",
-                    "description" : "Spider I saw at home",
-                    "tags": [
-                        "big",
-                        "stripy"
-                    ]
-                }
-            ]
-        }
+                "spiders" :
+                [
+                    {
+                        "sightedAt" : "2014-08-29T07:00",
+                        "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                        "description" : "Spider I saw on the train",
+                        "tags": [
+                            "stripy"
+                        ]
+                    }, 
+                    {
+                        "sightedAt" : "2014-08-29T13:00",
+                        "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14587204878_91405ee2e1_z.jpg",
+                        "description" : "Spider I saw at the office",
+                        "tags": [
+                            "big"
+                        ]
+                    },
+                    {
+                        "sightedAt" : "2014-08-29T19:00",
+                        "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14776091214_4699046e5d_z.jpg",
+                        "description" : "Spider I saw at home",
+                        "tags": [
+                            "big",
+                            "stripy"
+                        ]
+                    }
+                ]
+            }
+    
