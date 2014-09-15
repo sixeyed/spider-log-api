@@ -67,7 +67,7 @@ Access to Spider resources
                 ]
             }
 
-## My Spider [/spiders/{id}]
+## Get my Spider [/spiders/{id}]
 ### Get one of my spider sightings [GET]
 
 + Parameters
@@ -98,4 +98,33 @@ Access to Spider resources
                     "stripy"
                 ]
             }
+    
+## Create a new Spider [/spiders]
+### Get one of my spider sightings [POST]
+
++ Request
+
+    + Header
+    
+            Authorization: Basic dXNlcjpwYXNzd29yZA==
+            Content-type: application/json
+            x-api-version: 1.0
+    
+    + Body
+
+            {
+                "sightedAt" : "2014-08-29T07:10",
+                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                "description" : "Another spider I saw on the train (or was it the same one?)",
+                "tags": [
+                    "stripy"
+                ]
+            }
+        
++ Response 201 
+
+    + Header
+    
+            Location : spiders/abbd4122
+
     
