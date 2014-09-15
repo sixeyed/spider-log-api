@@ -66,4 +66,36 @@ Access to Spider resources
                     }
                 ]
             }
+
+## My Spider [/spiders/{id}]
+### Get one of my spider sightings [GET]
+
++ Parameters
+    + id (required, string, `aba443c`)... `id` of the spider sighting
+    
++ Request
+
+    + Header
+    
+            Authorization: Basic dXNlcjpwYXNzd29yZA==
+            x-api-version: 1.0
+        
++ Response 200 (application/json)
+
+    + Header
+    
+            ETag : "euyfewuyfvew76f7"
+            cache-control: max-age=600
+            
+    + Body
+
+
+            {
+                "sightedAt" : "2014-08-29T07:00",
+                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                "description" : "Spider I saw on the train",
+                "tags": [
+                    "stripy"
+                ]
+            }
     
