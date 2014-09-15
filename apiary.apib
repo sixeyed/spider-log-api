@@ -66,41 +66,10 @@ Access to Spider resources
                     }
                 ]
             }
-
-## Get my Spider [/spiders/{id}]
-### Get one of my spider sightings [GET]
-
-+ Parameters
-    + id (required, string, `aba443c`)... `id` of the spider sighting
-    
-+ Request
-
-    + Header
-    
-            Authorization: Basic dXNlcjpwYXNzd29yZA==
-            x-api-version: 1.0
-        
-+ Response 200 (application/json)
-
-    + Header
-    
-            ETag : "euyfewuyfvew76f7"
-            cache-control: max-age=600
+         
             
-    + Body
-
-
-            {
-                "sightedAt" : "2014-08-29T07:00",
-                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
-                "description" : "Spider I saw on the train",
-                "tags": [
-                    "stripy"
-                ]
-            }
-    
 ## Create a new Spider [/spiders]
-### Get one of my spider sightings [POST]
+### Create a spider sighting [POST]
 
 + Request
 
@@ -127,4 +96,59 @@ Access to Spider resources
     
             Location : spiders/abbd4122
 
+
+## One of my spider sightings [/spiders/{id}]
+### Get a spider sighting [GET]
+
++ Parameters
+    + id (required, string, `aba443c`)... `id` of the spider sighting
     
++ Request
+
+    + Header
+    
+            Authorization: Basic dXNlcjpwYXNzd29yZA==
+            x-api-version: 1.0
+        
++ Response 200 (application/json)
+
+    + Header
+    
+            ETag : "euyfewuyfvew76f7"
+            cache-control: max-age=600
+            
+    + Body
+
+            {
+                "sightedAt" : "2014-08-29T07:00",
+                "imageUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                "description" : "Spider I saw on the train",
+                "tags": [
+                    "stripy"
+                ]
+            }
+            
+            
+### Update a spider sighting [PUT]
+
++ Parameters
+    + id (required, string, `aba443c`)... `id` of the spider sighting
+    
++ Request
+
+    + Header
+    
+            Authorization: Basic dXNlcjpwYXNzd29yZA==
+            Content-type: application/json
+            x-api-version: 1.0
+            
+    + Body
+    
+            {
+                "sightedAt" : "2014-08-29T07:15",
+                "description" : "No, it was definitely different"
+            }
+        
++ Response 200
+
+            
